@@ -1,4 +1,14 @@
-include: package:flutter_lints/flutter.yaml
+# This file allows you to configure the Dart analyzer.
+#
+# The commented part below is just for inspiration. Read the guide here:
+#   https://www.dartlang.org/guides/language/analysis-options
 
-# Additional information about this file can be found at
-# https://dart.dev/guides/language/analysis-options
+include: package:lints/recommended.yaml
+
+analyzer:
+  exclude:
+    - test/issues/**
+
+linter:
+  rules:
+    - use_string_in_part_of_directives: false
