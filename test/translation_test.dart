@@ -2,13 +2,16 @@ import 'package:huggingface_dart/huggingface_dart.dart';
 import 'package:huggingface_dart/models/options.dart';
 import 'package:huggingface_dart/models/translation.dart';
 import 'package:test/test.dart';
+import 'package:dotenv/dotenv.dart';
 
-void main() {
+void main() async {
+  var env = DotEnv(includePlatformEnvironment: true)..load();
+
   group('HfInference', () {
     late HfInference hfInference;
 
     setUp(() {
-      final String accessToken = "hf_<token>";
+      final String? accessToken = '${env['HF_API_TOKEN']}';
       hfInference = HfInference(accessToken);
     });
 
