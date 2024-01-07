@@ -5,16 +5,14 @@ version: 0.0.1
 
 environment:
   sdk: '>=3.2.3 <4.0.0'
-  flutter: ">=1.17.0"
 
 dependencies:
   http: ^1.1.2
   dotenv: ^4.2.0
-  flutter:
-    sdk: flutter
 
 dev_dependencies:
-  test:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^2.0.0
+  test: '^1.25.0'
+  lints: '^3.0.0'
+  build_runner: '^2.4.6'
+  build_test: '^2.2.2'
+  build_web_compilers: '^4.0.6'

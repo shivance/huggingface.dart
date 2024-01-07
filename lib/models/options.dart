@@ -1,4 +1,4 @@
-class OptionalArgs{
+class OptionalArgs {
   bool useCache;
   bool waitForModel;
 
@@ -7,10 +7,8 @@ class OptionalArgs{
     this.waitForModel = false,
   });
 
-  Map<String, dynamic> toJson() => {
-    'use_cache': useCache,
-    'wait_for_model': waitForModel
-  };
+  Map<String, dynamic> toJson() =>
+      {'use_cache': useCache, 'wait_for_model': waitForModel};
 
   factory OptionalArgs.fromJson(Map<String, dynamic> json) {
     return OptionalArgs(
@@ -20,7 +18,7 @@ class OptionalArgs{
   }
 
   @override
-  String toString(){
+  String toString() {
     return 'Options: {use_cache: $useCache, wait_for_model: $waitForModel}';
   }
 }
