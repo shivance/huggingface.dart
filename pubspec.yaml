@@ -1,7 +1,7 @@
 name: huggingface_dart
 description: "Utilities to use the Hugging Face hub API"
 version: 0.0.1
-homepage:
+#homepage: ''
 
 environment:
   sdk: '>=3.2.3 <4.0.0'
