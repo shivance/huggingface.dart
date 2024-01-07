@@ -1,13 +1,13 @@
+import 'package:dotenv/dotenv.dart';
 import 'package:huggingface_dart/huggingface_dart.dart';
 import 'package:huggingface_dart/models/options.dart';
 import 'package:huggingface_dart/models/translation.dart';
 import 'package:test/test.dart';
-import 'package:dotenv/dotenv.dart';
 
-void main() async {
+void main() async{
   var env = DotEnv(includePlatformEnvironment: true)..load();
 
-  group('HfInference', () {
+  group("NLPService", () {
     late HfInference hfInference;
 
     setUp(() {
@@ -15,11 +15,10 @@ void main() async {
       hfInference = HfInference(accessToken);
     });
 
-    test('Translate single string', () async {
-      final TranslationArgs translationArgs =
-          TranslationArgs(inputs: "Меня зовут Вольфганг и я живу в Берлине");
-      final OptionalArgs optionalArgs =
-          OptionalArgs(useCache: true, waitForModel: true);
+    test("Translate single string", () async {
+
+      final TranslationArgs translationArgs = TranslationArgs(inputs: "Меня зовут Вольфганг и я живу в Берлине");
+      final OptionalArgs optionalArgs = OptionalArgs(useCache: true, waitForModel: true);
 
       final TranslationOutput result = await hfInference.translate(
           args: translationArgs,
@@ -37,7 +36,7 @@ void main() async {
         "Меня зовут Вольфганг и я живу в Берлине"
       ]);
       final OptionalArgs optionalArgs =
-          OptionalArgs(useCache: true, waitForModel: true);
+      OptionalArgs(useCache: true, waitForModel: true);
 
       final TranslationOutput result = await hfInference.translate(
           args: translationArgs,
@@ -49,5 +48,6 @@ void main() async {
         {'translation_text': 'My name is Wolfgang and I live in Berlin.'}
       ]);
     });
+
   });
 }
