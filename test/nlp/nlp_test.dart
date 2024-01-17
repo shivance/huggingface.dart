@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:dotenv/dotenv.dart';
 import 'package:huggingface_dart/huggingface_dart.dart';
 import 'package:test/test.dart';
@@ -11,7 +9,7 @@ void main() async {
     late HfInference hfInference;
 
     setUp(() {
-      final String? accessToken = '${env['HF_API_TOKEN']}';
+      String? accessToken = '${env['HF_API_TOKEN']}';
       hfInference = HfInference(accessToken);
     });
 
