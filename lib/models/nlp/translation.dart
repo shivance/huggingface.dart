@@ -1,23 +1,33 @@
+import 'package:meta/meta.dart';
+import 'dart:convert';
+
 class TranslationArgs {
-  dynamic inputs;
+  List<String> inputs;
 
-  TranslationArgs({required this.inputs});
+  TranslationArgs({
+    required this.inputs,
+  });
 
-  Map<String, dynamic> toJson() {
-    if (inputs is String) {
-      return {"inputs": inputs};
-    } else if (inputs is List<String>) {
-      return {"inputs": inputs};
-    } else {
-      throw ArgumentError(
-          "Invalid type for 'inputs'. Expected String or List<String>.");
-    }
-  }
+  TranslationArgs copyWith({
+    List<String>? inputs,
+  }) =>
+      TranslationArgs(
+        inputs: inputs ?? this.inputs,
+      );
 
-  @override
-  String toString() {
-    return 'TranslationArgs{${super.toString()}, inputs: $inputs}';
-  }
+  factory TranslationArgs.fromRawJson(String str) =>
+      TranslationArgs.fromJson(json.decode(str));
+
+  String toRawJson() => json.encode(toJson());
+
+  factory TranslationArgs.fromJson(Map<String, dynamic> json) =>
+      TranslationArgs(
+        inputs: List<String>.from(json["inputs"].map((x) => x)),
+      );
+
+  Map<String, dynamic> toJson() => {
+        "inputs": List<dynamic>.from(inputs.map((x) => x)),
+      };
 }
 
 class TranslationOutput {
