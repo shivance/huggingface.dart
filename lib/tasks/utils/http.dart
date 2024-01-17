@@ -49,3 +49,10 @@ class HTTPService {
         Exception("Failed to query the API after $maxRetries retries");
   }
 }
+
+void handleHttpError(http.Response response) {
+  if (response.statusCode != 200) {
+    throw Exception(
+        "Failed HTTP request with status code: ${response.statusCode}");
+  }
+}
