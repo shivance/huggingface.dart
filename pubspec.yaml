@@ -1,6 +1,6 @@
 name: huggingface_dart
 description: "Utilities to use the Hugging Face hub API"
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/shivance/huggingface.dart
 
 environment:
