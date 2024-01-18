@@ -133,7 +133,7 @@ void main() async {
     });
 
     test("Table QA", () async {
-      final result = await hfInference.tableQA(inputs: [
+      final result = await hfInference.tableQuestionAnswering(inputs: [
         {
           "query": "How many stars does the transformers repository have?",
           "table": {

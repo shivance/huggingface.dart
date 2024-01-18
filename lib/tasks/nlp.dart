@@ -130,7 +130,7 @@ class NLPTasks {
     return decodedResponse;
   }
 
-  Future<dynamic> tableQA(
+  Future<dynamic> tableQuestionAnswering(
       {required List<dynamic> inputs,
       required String model,
       dynamic options}) async {
