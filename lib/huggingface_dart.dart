@@ -67,11 +67,11 @@ class HfInference {
         inputs: inputs, parameters: parameters, model: model, options: options);
   }
 
-  Future<dynamic> tableQA(
+  Future<dynamic> tableQuestionAnswering(
       {required List<dynamic> inputs,
       required String model,
       dynamic options}) async {
-    return await nlpTasks.tableQA(
+    return await nlpTasks.tableQuestionAnswering(
         inputs: inputs, model: model, options: options);
   }
 
