@@ -8,13 +8,13 @@ A Dart/Flutter powered wrapper for the [Hugging Face Inference API](https://hugg
 With Dart:
 
 ```
- $ dart pub add huggingface_dart
+ dart pub add huggingface_dart
 ```
 
 With Flutter:
 
 ```
- $ flutter pub add huggingface_dart
+ flutter pub add huggingface_dart
 ```
 
 This will add a line like this to your package's pubspec.yaml (and run an implicit dart pub get):
@@ -29,8 +29,9 @@ dependencies:
 ```
 import 'package:huggingface_dart/huggingface_dart.dart';
 
-HfInference hfInference = HFInference('your_access_token);
+HfInference hfInference = HfInference('your_access_token');
 ```
+
 
 Your access token should be kept private. If you need to protect it in front-end applications, we suggest setting up a proxy server that stores the access token.
 
